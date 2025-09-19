@@ -40,23 +40,34 @@ Make sure you have installed:
 
 ### 1. Clone the repository
 2. Install Dependencies
+
+```bash
   cd server
   npm install
+  cd ..
+  cd client
+  npm install
+```
 
-cd ..
-cd client
-npm install
 Create .env file in the server directory
 Add 
+```bash  
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
-
+```
+To Run Backend 
+```bash
 cd server
-npm run dev to bring up backend 
+npm run dev
+```
+To Run Frontend
+```bash
 cd ..
 cd client
-npm start to bring up frontend
+npm start 
+```
+
 
 
 

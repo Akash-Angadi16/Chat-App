@@ -4,7 +4,7 @@ import Conversation from '../models/Conversation.js';
 
 const router = express.Router();
 
-// List conversations for current user
+// Listing conversationss for current user
 router.get('/', auth, async (req, res) => {
   try {
     const convs = await Conversation.find({ participants: req.userId })
@@ -17,9 +17,9 @@ router.get('/', auth, async (req, res) => {
   }
 });
 
-// Create a conversation (participants array)
+// Create a conversation (participants are array)
 router.post('/', auth, async (req, res) => {
-  const { participants, title } = req.body; // participants: [userId1, userId2]
+  const { participants, title } = req.body; 
   try {
     const conv = await Conversation.create({ participants, title });
     res.status(201).json(conv);

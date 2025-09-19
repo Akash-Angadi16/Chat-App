@@ -4,7 +4,7 @@ import Message from "../models/Message.js";
 
 const router = express.Router();
 
-// Send a message
+// Sending message
 router.post("/", auth, async (req, res) => {
   console.log(req)
   const { senderId, receiverId, text } = req.body;
@@ -24,7 +24,7 @@ router.post("/", auth, async (req, res) => {
   }
 });
 
-// Get chat history between two users
+// Get chat history of two users
 router.get("/:userId", auth, async (req, res) => {
   const currentUserId = req.userId;
   const otherUserId = req.params.userId;

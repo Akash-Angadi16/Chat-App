@@ -4,7 +4,7 @@ import User from '../models/User.js';
 
 const router = express.Router();
 
-// Get current user profile
+// Get current user 
 router.get('/me', auth, async (req, res) => {
   try {
     const user = await User.findById(req.userId).select('-password');
@@ -15,7 +15,7 @@ router.get('/me', auth, async (req, res) => {
   }
 });
 
-// List all users (for adding as contacts / debugging)
+// List all users 
 router.get('/', auth, async (req, res) => {
   try {
     const users = await User.find().select('-password');

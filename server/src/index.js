@@ -21,7 +21,7 @@ app.use(cors({
 }));
 app.use(express.json());
 
-// Mount API routes
+// API routes
 app.use("/api/auth", authRoutes);
 app.use("/api/users", usersRoutes);
 app.use("/api/messages", messagesRoutes);
@@ -49,7 +49,7 @@ io.on("connection", (socket) => {
 
   socket.on("sendMessage", (msg) => {
     const { receiverId } = msg;
-    // emit to receiver
+  
     io.to(receiverId).emit("receiveMessage", msg);
   });
 
@@ -58,15 +58,15 @@ io.on("connection", (socket) => {
   });
 });
 
-// Connect to MongoDB and then start server
+// Connect to DB
 mongoose.connect(MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
 .then(() => {
-  console.log("✅ MongoDB connected");
+  console.log("MongoDB connected successfully");
   server.listen(PORT, () => {
-    console.log(` Backend running on port ${PORT}`);
+    console.log(` server is running on port ${PORT}`);
   });
 })
 .catch((err) => {

@@ -1,4 +1,4 @@
-# 📱 WhatsApp Clone (MERN Stack)
+# WhatsApp Clone (MERN Stack)
 
 A real-time chat application inspired by WhatsApp, built with the **MERN stack** (MongoDB, Express.js, React.js, Node.js) and **Socket.io** for live messaging.  
 
